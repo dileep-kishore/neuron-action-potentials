@@ -6,11 +6,11 @@ global I_ext a b gamma
 a = 0.5;
 b = 0.1;
 gamma = 0.1;
-time_interval = [0 500];
+time_interval = [0 250];
 inital_conditions = [0 0];
 I1 = 0;
 I2 = 0;
-thres = 0.5;
+thres = 1;
 for I_ext=0:0.01:5
     [T, solution] = ode45(@fn_ode, time_interval, inital_conditions);
     if max(solution(:, 1)) < 0.3
@@ -22,8 +22,10 @@ for I_ext=0:0.01:5
     if length(pks) > 1 && I1 == 0 && pks(2) > thres
         pks
         I1 = I_ext;
+        continue;
     end
-    if length(pks) > 1 && pks(2) < thres && I1 ~= 0
+    if length(pks) > 1  && pks(2) < thres && I1 ~= 0
+        pks
         I2 = I_ext;
         break;
     end
