@@ -2,11 +2,11 @@
 clear
 clc
 global I_ext a b gamma
-I_ext = 0.22;
+I_ext = 0.75;
 a = 0.5;
 b = 0.1;
 gamma = 0.1;
-time_interval = [0 500];
+time_interval = [0 250];
 inital_conditions = [0 0];
 [T, solution] = ode45(@fn_ode, time_interval, inital_conditions);
 figure(1)
