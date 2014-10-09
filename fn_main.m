@@ -10,9 +10,9 @@ time_interval = [0 500];
 inital_conditions = [0 0];
 I1 = 0;
 I2 = 0;
-for I_ext=1:0.01:5
+for I_ext=0:0.01:5
     [T, solution] = ode45(@fn_ode, time_interval, inital_conditions);
-    [peak, location] = findpeaks(solution(:, 1));
+    [peak, location] = findpeaks(solution(:, 1), 'THRESHOLD', 0.1);
     if length(peak) > 1 && I1 == 0
         I1 = I_ext;
     end
