@@ -2,13 +2,13 @@
 clear
 clc
 global I_ext a b gamma
-I_ext = 0.5;
+I_ext = 0.22;
 a = 0.5;
 b = 0.1;
 gamma = 0.1;
-time_interval = [0 1000];
+time_interval = [0 500];
 inital_conditions = [0 0];
-[T, solution] = ode23(@fn_ode, time_interval, inital_conditions);
+[T, solution] = ode45(@fn_ode, time_interval, inital_conditions);
 figure(1)
 plot(T, solution(:, 1), 'b')
 hold on
