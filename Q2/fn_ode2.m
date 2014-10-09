@@ -5,9 +5,9 @@ function dy = fn_ode(t, y)
     Amp = 0.5;
 	a = 0.5;
 	b = 0.1;
-    d = 300;
+    d = 150;
     I_pulse = 0;
-    % if t > 100 && t < 100 + d
+    % if t > 50 && t < 50 + d
     %     I_pulse = Amp;
     % else
     %     I_pulse = 0;
