@@ -30,8 +30,8 @@ for I_ext=0:0.01:3
         break;
     end
 end
-I1
-I2
+disp(sprintf('Oscillations start when I_ext = I1 = %.4f',I1)
+disp(sprintf('Oscillations stop when I_ext = I2 = %.4f',I2)
 
 I_ext = (I1 + I2) / 2
 [T, solution] = ode45(@fn_ode2, time_interval, inital_conditions);

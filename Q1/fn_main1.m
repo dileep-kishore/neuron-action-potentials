@@ -50,7 +50,7 @@ w_omega = b/gamma * v;
 plot(v, w_v, 'r')
 hold on
 plot(v, w_omega, 'b')
-title('Nullclines transposed on phase plane')
+title('Nullclines superimposed on phase plane trajectory')
 legend('Phase diagram', 'v nullcline', 'w nullcline')
 xlabel('v')
 ylabel('w')
