@@ -23,11 +23,14 @@ plot(solution(:,1), solution(:,2), 'g')
 hold on
 v = -0.6:0.01:1.5;
 w_v = v.*(a-v).*(v-1) + I_ext;
+w_v_pulse = v.*(a-v).*(v-1) + I_ext + I_pulse;
 w_omega = b/gamma * v;
 plot(v, w_v, 'r')
 hold on
 plot(v, w_omega, 'b')
+hold on
+plot(v, w_v_pulse, '-y')
 title('Nullclines superimposed on phase plane trajectory')
-legend('Phase diagram', 'v nullcline', 'w nullcline')
+legend('Phase trajectory', 'v nullcline', 'w nullcline', 'v nullcline(I-pulse)')
 xlabel('v')
 ylabel('w')

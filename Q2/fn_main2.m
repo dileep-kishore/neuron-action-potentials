@@ -30,8 +30,8 @@ for I_ext=0:0.01:3
         break;
     end
 end
-disp(sprintf('Oscillations start when I_ext = I1 = %.4f',I1)
-disp(sprintf('Oscillations stop when I_ext = I2 = %.4f',I2)
+disp(sprintf('Oscillations start when I_ext = I1 = %.4f',I1))
+disp(sprintf('Oscillations stop when I_ext = I2 = %.4f',I2))
 
 I_ext = (I1 + I2) / 2
 [T, solution] = ode45(@fn_ode2, time_interval, inital_conditions);
@@ -53,6 +53,6 @@ plot(v, w_v, 'r')
 hold on
 plot(v, w_omega, 'b')
 title('Nullclines transposed on phase plane')
-legend('Phase diagram', 'v nullcline', 'w nullcline')
+legend('Phase trajectory', 'v nullcline', 'w nullcline')
 xlabel('v')
 ylabel('w')
